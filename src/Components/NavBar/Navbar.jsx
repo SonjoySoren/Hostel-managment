@@ -14,6 +14,7 @@ const Navbar = () => {
         
 
     }, [ setImg, user?.photoURL])
+    console.log(user)
     const handleLogout = () => {
         logOut()
             .then(result => console.log(result))

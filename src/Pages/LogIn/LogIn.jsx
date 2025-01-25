@@ -4,6 +4,8 @@ import useAuth from "../../hooks/useAuth";
 import { useEffect, useState } from "react";
 import SocialLogin from "../../Components/NavBar/SocialLogin/SocialLogin";
 import Swal from "sweetalert2";
+import loginAnimation from '../../assets/LottieFiles/Login-animation.json';
+import Lottie from "lottie-react";
 
 
 const Login = () => {
@@ -47,11 +49,12 @@ const Login = () => {
         <div className="hero bg-base-200 min-h-screen">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center md:w-1/2 lg:text-left">
-                    <h1 className="text-5xl font-bold">Login now!</h1>
+                    {/* <h1 className="text-5xl font-bold">Login now!</h1>
                     <p className="py-6">
                         Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
                         quasi. In deleniti eaque aut repudiandae et a id nisi.
-                    </p>
+                    </p> */}
+                    <Lottie animationData={loginAnimation}></Lottie>
                 </div>
                 <div className="card bg-base-100 md:w-1/2 max-w-sm  shadow-2xl">
                     <form onSubmit={handleLogin} className="card-body">

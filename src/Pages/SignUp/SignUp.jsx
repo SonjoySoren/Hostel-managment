@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import SocialLogin from '../../Components/NavBar/SocialLogin/SocialLogin';
 import signUpAnimation from '../../assets/LottieFiles/Register-animation.json'
 import Lottie from 'lottie-react';
+import { Helmet } from 'react-helmet-async';
 
 const SignUp = () => {
     const axiosPublic = useAxiosPublic();
@@ -64,6 +65,9 @@ const SignUp = () => {
     };
     return (
         <div className="hero bg-base-200 min-h-screen">
+            <Helmet>
+                <title>Hostel || Sign Up</title>
+            </Helmet>
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
                     {/* <h1 className="text-5xl font-bold">Sign Up now!</h1>
