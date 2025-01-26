@@ -8,6 +8,7 @@ import SignUp from "../Pages/SignUp/SignUp";
 import Login from "../Pages/LogIn/LogIn";
 import MealDetails from "../Pages/MealDetails/MealDetails";
 import AllMeal from "../Pages/AllMeal/AllMeal";
+import Upcoming from "../Pages/Upcoming/Upcoming";
 
 const Routes = createBrowserRouter([
     {
@@ -33,6 +34,10 @@ const Routes = createBrowserRouter([
             {
                 path: '/allMeal',
                 element: <AllMeal></AllMeal>,
+            },
+            {
+                path: '/upcoming',
+                element: <Upcoming></Upcoming>
             }
         ]
         
