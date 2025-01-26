@@ -65,7 +65,7 @@ const MealDetails = () => {
             });
             return;
         }
-        const res = await axiosPublic.put(`/meal/updateLikes/${id}`, email);
+        const res = await axiosSecure.put(`/meal/updateLikes/${id}`, email);
         console.log(res.data);
 
         setIsFavorite(!isFavorite);
@@ -284,8 +284,8 @@ const MealDetails = () => {
                                     <div className="flex items-center gap-3">
                                         <GoVerified className="text-[3rem] text-gray-500 p-3 bg-gray-100 rounded-md" />
                                         <div>
-                                            <p className="text-sm text-gray-500">Guaranteed</p>
-                                            <p className="font-medium text-[0.9rem] text-gray-800">1 year</p>
+                                            <p className="text-sm text-gray-500">Category:</p>
+                                            <p className="font-medium text-[0.9rem] text-gray-800">{category}</p>
                                         </div>
                                     </div>
                                 </div>
