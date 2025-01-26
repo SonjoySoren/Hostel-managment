@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 
 const useUpcomingMeals = () => {
     const axiosPublic = useAxiosPublic();
-    const { data: upcomingMeals = [{}], isLoading, refetch } = useQuery({
+    const { data: upcomingMeals = [], isLoading, refetch } = useQuery({
         queryKey: ['MealById'],
         queryFn: async () => {
             const res = await axiosPublic.get(`/upcomingMeals`);
