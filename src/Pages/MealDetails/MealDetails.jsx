@@ -24,7 +24,7 @@ import useReviewById from "../../hooks/useReviewById";
 const MealDetails = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    const axiosPublic = useAxiosPublic();
+    
     const axiosSecure = useAxiosSecure();
     const { user, loading } = useAuth();
     const { id } = useParams();

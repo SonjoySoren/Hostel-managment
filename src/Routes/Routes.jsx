@@ -13,6 +13,7 @@ import DashBoard from "../Layout/DashBoard/DashBoard";
 import PrivateRoute from "./PrivateRoutes";
 import MyProfile from "../Pages/Dashboard/MyProfile/MyProfile";
 import Requested from "../Pages/Dashboard/Requested/Requested";
+import UserReview from "../Pages/Dashboard/UserReview/UserReview";
 
 const Routes = createBrowserRouter([
     {
@@ -57,6 +58,10 @@ const Routes = createBrowserRouter([
             {
                 path: 'requested',
                 element: <PrivateRoute><Requested></Requested></PrivateRoute>
+            },
+            {
+                path: 'myReview',
+                element: <PrivateRoute><UserReview></UserReview></PrivateRoute>
             }
         ]
     }

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import React from 'react';
+
 import Navbar from "../../Components/NavBar/Navbar";
 import { NavLink, Outlet } from "react-router-dom";
 import './DashBoard.css'
@@ -51,6 +51,8 @@ const DashBoard = () => {
 
                                     </li>
                                     <li className="my-2">
+                                        <NavLink to={'/dashboard/myReview'}>My Reviews</NavLink>
+
 
                                     </li>
                                     {/* Add more links here */}
