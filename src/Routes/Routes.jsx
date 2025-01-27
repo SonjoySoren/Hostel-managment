@@ -14,6 +14,7 @@ import PrivateRoute from "./PrivateRoutes";
 import MyProfile from "../Pages/Dashboard/MyProfile/MyProfile";
 import Requested from "../Pages/Dashboard/Requested/Requested";
 import UserReview from "../Pages/Dashboard/UserReview/UserReview";
+import Update from "../Pages/Dashboard/UserReview/Update";
 
 const Routes = createBrowserRouter([
     {
@@ -61,7 +62,14 @@ const Routes = createBrowserRouter([
             },
             {
                 path: 'myReview',
-                element: <PrivateRoute><UserReview></UserReview></PrivateRoute>
+                element: <PrivateRoute><UserReview></UserReview></PrivateRoute>,
+                
+            },
+            {
+                
+                    path: 'updateReview/:id',
+                    element: <PrivateRoute><Update></Update></PrivateRoute>
+                
             }
         ]
     }
