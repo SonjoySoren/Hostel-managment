@@ -12,6 +12,7 @@ import Upcoming from "../Pages/Upcoming/Upcoming";
 import DashBoard from "../Layout/DashBoard/DashBoard";
 import PrivateRoute from "./PrivateRoutes";
 import MyProfile from "../Pages/Dashboard/MyProfile/MyProfile";
+import Requested from "../Pages/Dashboard/Requested/Requested";
 
 const Routes = createBrowserRouter([
     {
@@ -50,8 +51,12 @@ const Routes = createBrowserRouter([
         element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
         children: [
             {
-                path: '/dashboard',
+                path: 'profile',
                 element: <PrivateRoute><MyProfile></MyProfile></PrivateRoute>
+            }, 
+            {
+                path: 'requested',
+                element: <PrivateRoute><Requested></Requested></PrivateRoute>
             }
         ]
     }

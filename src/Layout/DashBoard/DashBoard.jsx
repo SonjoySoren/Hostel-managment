@@ -19,7 +19,7 @@ const DashBoard = () => {
             <div className="flex flex-col md:flex-row mt-1">
                 {/* Sidebar */}
                 <div
-                    className={`md:w-1/4 p-4 bg-gray-100 dashboard ${isSidebarOpen ? 'block' : 'hidden'}`}
+                    className={`md:w-1/4 p-4 bg-gray-100 dashboard md:h-screen ${isSidebarOpen ? 'block' : 'hidden'}`}
                 >
                     {
                         admin ? <div>
@@ -39,13 +39,15 @@ const DashBoard = () => {
 
                         </div>
                             :
+                            // side nav for user
                             <div>
                                 <h2 className="text-xl font-bold mb-4">User DashBoard</h2>
                                 <ul>
                                     <li className="my-2">
-                                        <NavLink to={'/dashboard'}>My Profile</NavLink>
+                                        <NavLink to={'/dashboard/profile'}>My Profile</NavLink>
                                     </li>
                                     <li className="my-2">
+                                        <NavLink to={'/dashboard/requested'}>Requested Meals</NavLink>
 
                                     </li>
                                     <li className="my-2">
@@ -78,7 +80,7 @@ const DashBoard = () => {
                 </div>
 
 
-                
+
             </div>
 
         </div>

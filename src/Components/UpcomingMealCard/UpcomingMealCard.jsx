@@ -17,7 +17,7 @@ const UpcomingMealCard = ({ meal }) => {
     // console.log("from upcard", id);
     
     // const [upcomingMeal, ,refetch] =  useUpcomingMealById('6796ad7ca9bc08d9771359da');
-    const { title, price, rating, image,  category, likes, likedBy = [] } = meal
+    const { title } = meal
     // const axiosSecure = useAxiosSecure();
     
 
@@ -45,8 +45,8 @@ const UpcomingMealCard = ({ meal }) => {
     //         });
     //         return;
     //     }
-    //     // const res = await axiosSecure.put(`/upcomingMeal/updateLikes/${id}`, email);
-    //     // console.log(res.data);
+        // const res = await axiosSecure.put(`/upcomingMeal/updateLikes/${id}`, email);
+        // console.log(res.data);
 
     //     setIsFavorite(!isFavorite);
     //     refetch();
