@@ -9,6 +9,9 @@ import Login from "../Pages/LogIn/LogIn";
 import MealDetails from "../Pages/MealDetails/MealDetails";
 import AllMeal from "../Pages/AllMeal/AllMeal";
 import Upcoming from "../Pages/Upcoming/Upcoming";
+import DashBoard from "../Layout/DashBoard/DashBoard";
+import PrivateRoute from "./PrivateRoutes";
+import MyProfile from "../Pages/Dashboard/MyProfile/MyProfile";
 
 const Routes = createBrowserRouter([
     {
@@ -41,6 +44,16 @@ const Routes = createBrowserRouter([
             }
         ]
         
+    },
+    {
+        path: '/dashboard',
+        element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
+        children: [
+            {
+                path: '/dashboard',
+                element: <PrivateRoute><MyProfile></MyProfile></PrivateRoute>
+            }
+        ]
     }
 ])
     
