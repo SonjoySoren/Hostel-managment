@@ -1,16 +1,21 @@
+import MealCard from "../../Components/MealCard/MealCard";
 
-import useUpcomingMeals from '../../hooks/useUpcomingMeals';
-import UpcomingMealCard from '../../Components/UpcomingMealCard/UpcomingMealCard';
+import UpcomingMealCardF from "../../Components/UpcomingMealCard/UpcomingMealCardF";
+import useUpcomingMeals from "../../hooks/useUpcomingMeals";
+
+
 
 const Upcoming = () => {
-    const [upcomingMeals = []] = useUpcomingMeals();
-    console.log(upcomingMeals);
+    const [upcomingMeals, refetch ] = useUpcomingMeals();
     return (
         <div>
-            <h2 className='text-3xl text-center mt-10'>Upcoming Meals: {upcomingMeals.length}</h2>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+            <h1 className="text-3xl mt-10 text-center">Upcoming meals:{upcomingMeals?.length}</h1>
 
-                {upcomingMeals.map(item => <UpcomingMealCard key={item._id} meal={item}></UpcomingMealCard>)}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                {
+                    upcomingMeals.map(item=> <UpcomingMealCardF key={item._id} meal={item} refetch={refetch}/>)
+                }
+
             </div>
         </div>
     );

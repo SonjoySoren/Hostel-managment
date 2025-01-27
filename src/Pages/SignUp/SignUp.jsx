@@ -114,15 +114,13 @@ const SignUp = () => {
                             {errors.password?.type === 'minLength' && <span className="ml-2 text-red-600 mt-2">Password Must be at least 6 characters</span>}
                             {errors.password?.type === 'maxLength' && <span className="ml-2 text-red-600 mt-2">Password Must be less than 21 characters</span>}
                             {errors.password?.type === 'pattern' && <span className="ml-2 text-red-600 mt-2">Password Must have one uppercase, one lower case, one number and one following charcter (@$!%*?&)</span>}
-                            <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                            </label>
+                            
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Sign Up</button>
                         </div>
                     </form>
-                    <p className='text-center pb-6 text-amber-600'>Already have an account? <span className='font-bold'><Link to={'/login'}>Log In</Link></span></p>
+                    <p className='text-center pb-6 text-amber-600'>Already have an account? <span className='font-bold'><Link to={'/joinUs'}>Log In</Link></span></p>
                     <SocialLogin></SocialLogin>
                 </div>
             </div>

@@ -7,43 +7,51 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAuth from "../../hooks/useAuth";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+import useUpcomingMeals from "../../hooks/useUpcomingMeals";
+import useUpcomingMealById from "../../hooks/useUpcomingMealById";
 
 
 const UpcomingMealCard = ({ meal }) => {
-    const navigate = useNavigate();
-    const axiosPublic = useAxiosPublic();
+    // const navigate = useNavigate();
+    // console.log("from upcard", id);
+    
+    // const [upcomingMeal, ,refetch] =  useUpcomingMealById('6796ad7ca9bc08d9771359da');
+    const { title, price, rating, image,  category, likes, likedBy = [] } = meal
+    // const axiosSecure = useAxiosSecure();
+    
 
-    const { user } = useAuth();
-    const { title, price, rating, image, _id: id, category, likes, likedBy = [] } = meal;
-    const [likeCount, setLikeCount] = useState(0)
-    const [isFavorite, setIsFavorite] = useState(false)
+    // const { user, loading } = useAuth();
+    // const [likeCount, setLikeCount] = useState(0)
+    // const [isFavorite, setIsFavorite] = useState(false)
 
-    useEffect(() => {
-        setLikeCount(likes)
-        setIsFavorite(likedBy?.includes(user?.email))
-    }, [meal,])
+    // useEffect(() => {
+    //     setLikeCount(likes)
+    //     setIsFavorite(likedBy?.includes(user?.email))
+    // }, [upcomingMeal, loading])
 
-    const email = { email: user?.email }
-    const handleLiked = async () => {
-        if (!user) {
-            Swal.fire({
-                title: "Login Required",
-                text: "Please login to like this meal",
-                icon: "error"
-            }).then(res => {
-                if (res.isConfirmed) {
-                    navigate('/joinUs', { state: { from: location } })
+    // const email = { email: user?.email }
+    // const handleLiked = async () => {
+    //     if (!user) {
+    //         Swal.fire({
+    //             title: "Login Required",
+    //             text: "Please login to like this meal",
+    //             icon: "error"
+    //         }).then(res => {
+    //             if (res.isConfirmed) {
+    //                 navigate('/joinUs', { state: { from: location } })
 
-                }
-            });
-            return;
-        }
-        const res = await axiosPublic.put(`/meal/updateLikes/${id}`, email);
-        console.log(res.data);
+    //             }
+    //         });
+    //         return;
+    //     }
+    //     // const res = await axiosSecure.put(`/upcomingMeal/updateLikes/${id}`, email);
+    //     // console.log(res.data);
 
-        setIsFavorite(!isFavorite);
-        refetch();
-    }
+    //     setIsFavorite(!isFavorite);
+    //     refetch();
+        
+    // }
 
 
     return (
@@ -65,6 +73,10 @@ const UpcomingMealCard = ({ meal }) => {
                     </div>
                     <div>
                         <h3 className='text-gray-900'>Category: {category}</h3>
+                    </div>
+                    {/* likes */}
+                    <div>
+                        <p>Likes: {likeCount}</p>
                     </div>
 
                     <div className="flex items-end justify-between mt-2">
