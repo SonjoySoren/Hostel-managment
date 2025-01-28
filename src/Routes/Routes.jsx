@@ -15,6 +15,9 @@ import MyProfile from "../Pages/Dashboard/MyProfile/MyProfile";
 import Requested from "../Pages/Dashboard/Requested/Requested";
 import UserReview from "../Pages/Dashboard/UserReview/UserReview";
 import Update from "../Pages/Dashboard/UserReview/Update";
+import AdminRoute from "./AdminRoute";
+import MyProfileAdmin from "../Pages/Dashboard/MyProfileAdmin/MyProfileAdmin";
+import ManageUser from "../Pages/Dashboard/ManageUser/ManageUser";
 
 const Routes = createBrowserRouter([
     {
@@ -70,7 +73,16 @@ const Routes = createBrowserRouter([
                     path: 'updateReview/:id',
                     element: <PrivateRoute><Update></Update></PrivateRoute>
                 
-            }
+            },
+            // admin routes 
+            {
+                path:'adminProfile',
+                element:<AdminRoute><MyProfileAdmin></MyProfileAdmin></AdminRoute>
+            },
+            {
+                path:'manageUser',
+                element:<AdminRoute><ManageUser></ManageUser></AdminRoute>
+            },
         ]
     }
 ])

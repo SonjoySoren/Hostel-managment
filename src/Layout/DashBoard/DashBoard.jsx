@@ -3,10 +3,12 @@ import { useState } from "react";
 import Navbar from "../../Components/NavBar/Navbar";
 import { NavLink, Outlet } from "react-router-dom";
 import './DashBoard.css'
+import useAdmin from "../../hooks/useAdmin";
 
 
 const DashBoard = () => {
-    const admin = false;
+    const [admin] = useAdmin();
+    console.log(admin);
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
     const toggleSidebar = () => {
@@ -26,10 +28,12 @@ const DashBoard = () => {
                             <h2 className="text-xl font-bold mb-4">Admin DashBoard</h2>
                             <ul>
                                 <li className="my-2">
-                                    <a href="#" className="hover:underline">Home</a>
+                                    <NavLink to={'/dashboard/adminProfile'}>My Profile</NavLink>
+
                                 </li>
                                 <li className="my-2">
-                                    <a href="#" className="hover:underline">Products</a>
+
+                                    <NavLink to={'/dashboard/manageUser'}>Manage Users</NavLink>
                                 </li>
                                 <li className="my-2">
                                     <a href="#" className="hover:underline">Customers</a>
