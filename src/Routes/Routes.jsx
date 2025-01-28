@@ -19,6 +19,10 @@ import AdminRoute from "./AdminRoute";
 import MyProfileAdmin from "../Pages/Dashboard/MyProfileAdmin/MyProfileAdmin";
 import ManageUser from "../Pages/Dashboard/ManageUser/ManageUser";
 import AddMeal from "../Pages/Dashboard/AddItem/AddMeal";
+import AllMealAdmin from "../Pages/Dashboard/AllMeal/AllMealAdmin";
+import AllReview from "../Pages/Dashboard/AllReview/AllReview";
+import ServeMeal from "../Pages/Dashboard/ServeMeal/ServeMeal";
+import UpcomingAdmin from "../Pages/Dashboard/Upcoming/UpcomingAdmin";
 
 const Routes = createBrowserRouter([
     {
@@ -88,6 +92,23 @@ const Routes = createBrowserRouter([
                 path:'addMeal',
                 element:<AdminRoute><AddMeal></AddMeal></AdminRoute>
             },
+            {
+                path:'allMealAdmin',
+                element:<AdminRoute><AllMealAdmin></AllMealAdmin></AdminRoute>
+            },
+            {
+                path:'allReviewsAdmin',
+                element:<AdminRoute><AllReview></AllReview></AdminRoute>
+            },
+            {
+                path:'serve',
+                element:<AdminRoute><ServeMeal></ServeMeal></AdminRoute>
+            },
+            {
+                path:'upcoming',
+                element:<AdminRoute><UpcomingAdmin></UpcomingAdmin></AdminRoute>
+            },
+
         ]
     }
 ])

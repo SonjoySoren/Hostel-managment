@@ -38,6 +38,18 @@ const DashBoard = () => {
                                 <li className="my-2">
                                     <NavLink to={'/dashboard/addMeal'}>Add Meals</NavLink>
                                 </li>
+                                <li className="my-2">
+                                    <NavLink to={'/dashboard/allMealAdmin'}>All Meals</NavLink>
+                                </li>
+                                <li className="my-2">
+                                    <NavLink to={'/dashboard/allReviewsAdmin'}>All Reviews</NavLink>
+                                </li>
+                                <li className="my-2">
+                                    <NavLink to={'/dashboard/serve'}>Serve Meal</NavLink>
+                                </li>
+                                <li className="my-2">
+                                    <NavLink to={'/dashboard/upcoming'}>Upcoming Meals</NavLink>
+                                </li>
                                 {/* Add more links here */}
                             </ul>
 
@@ -59,7 +71,7 @@ const DashBoard = () => {
 
 
                                     </li>
-                                    {/* Add more links here */}
+                                    
                                 </ul>
 
                             </div>
