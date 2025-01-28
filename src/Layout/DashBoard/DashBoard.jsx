@@ -36,7 +36,7 @@ const DashBoard = () => {
                                     <NavLink to={'/dashboard/manageUser'}>Manage Users</NavLink>
                                 </li>
                                 <li className="my-2">
-                                    <a href="#" className="hover:underline">Customers</a>
+                                    <NavLink to={'/dashboard/addMeal'}>Add Meals</NavLink>
                                 </li>
                                 {/* Add more links here */}
                             </ul>

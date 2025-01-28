@@ -18,6 +18,7 @@ import Update from "../Pages/Dashboard/UserReview/Update";
 import AdminRoute from "./AdminRoute";
 import MyProfileAdmin from "../Pages/Dashboard/MyProfileAdmin/MyProfileAdmin";
 import ManageUser from "../Pages/Dashboard/ManageUser/ManageUser";
+import AddMeal from "../Pages/Dashboard/AddItem/AddMeal";
 
 const Routes = createBrowserRouter([
     {
@@ -82,6 +83,10 @@ const Routes = createBrowserRouter([
             {
                 path:'manageUser',
                 element:<AdminRoute><ManageUser></ManageUser></AdminRoute>
+            },
+            {
+                path:'addMeal',
+                element:<AdminRoute><AddMeal></AddMeal></AdminRoute>
             },
         ]
     }
