@@ -1,7 +1,7 @@
-import React from 'react';
+
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { HiMiniUserGroup } from 'react-icons/hi2';
-import { ImBin } from 'react-icons/im';
+
 import { useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
 
@@ -16,68 +16,36 @@ const ManageUser = () => {
     })
 
     const handleMakeAdmin = (user) => {
-        // Swal.fire({
-        //     title: `Are you sure you want to make ${user.name} admin?`,
-        //     text: "You won't be able to revert this!",
-        //     icon: "warning",
-        //     showCancelButton: true,
-        //     confirmButtonColor: "#3085d6",
-        //     cancelButtonColor: "#d33",
-        //     confirmButtonText: "Yes!"
-        // }).then((result) => {
-        //     if (result.isConfirmed) {
-        //         axiosSecure.patch(`/users/admin/${user._id}`)
-        //             .then(res => {
-        //                 console.log(res.data);
-        //                 if (res.data?.modifiedCount > 0) {
-        //                     refetch();
-        //                     Swal.fire({
-        //                         title: "Success",
-        //                         text: `${user.name} is Admin now`,
-        //                         icon: "success"
+        Swal.fire({
+            title: `Are you sure you want to make ${user.name} admin?`,
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axiosSecure.patch(`/users/admin/${user._id}`)
+                    .then(res => {
+                        console.log(res.data);
+                        if (res.data?.modifiedCount > 0) {
+                            refetch();
+                            Swal.fire({
+                                title: "Success",
+                                text: `${user.name} is Admin now`,
+                                icon: "success"
 
 
-        //                     });
-        //                 }
-        //             })
-        //     }
-        // })
+                            });
+                        }
+                    })
+            }
+        })
 
     }
 
-    const handleDelete = (user) => {
-
-
-        // Swal.fire({
-        //     title: "Are you sure want to delete?",
-        //     text: "You won't be able to revert this!",
-        //     icon: "warning",
-        //     showCancelButton: true,
-        //     confirmButtonColor: "#3085d6",
-        //     cancelButtonColor: "#d33",
-        //     confirmButtonText: "Yes, delete it!"
-        // }).then((result) => {
-        //     if (result.isConfirmed) {
-
-
-        //         axiosSecure.delete(`/users/${user._id}`)
-        //             .then(res => {
-        //                 console.log(res.data);
-        //                 if (res.data.deletedCount > 0) {
-        //                     refetch();
-        //                     Swal.fire({
-        //                         title: "Deleted!",
-        //                         text: "Your file has been deleted.",
-        //                         icon: "success"
-
-
-        //                     });
-
-        //                 }
-        //             })
-        //     }
-        // });
-    }
+    
 
 
     return (
@@ -107,7 +75,7 @@ const ManageUser = () => {
                                 <td>{user.email}</td>
                                 <td>
                                     {
-                                        user?.role ?
+                                        user?.role =="admin" ?
                                             'Admin'
                                             :
                                             <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost">
@@ -117,9 +85,7 @@ const ManageUser = () => {
 
                                 </td>
                                 <td>
-                                    <button onClick={() => handleDelete(user._id)} className="btn btn-ghost">
-                                        <ImBin className="text-2xl text-red-600" />
-                                    </button>
+                                   {user?.badge}
                                 </td>
                             </tr>)
                         }

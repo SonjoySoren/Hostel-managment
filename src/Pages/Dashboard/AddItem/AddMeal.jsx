@@ -51,7 +51,7 @@ const AddMeal = () => {
             }
         })
         if (res.data.success) {
-            const menuInfo = {
+            const mealInfo = {
                 title: data.title,
                 price: parseFloat(data.price),
                 category: data.category,
@@ -65,21 +65,21 @@ const AddMeal = () => {
                 reviewsCount: 0,
                 image: res.data.data.display_url
             }
-            console.log('added to imgdb', menuInfo);
-            // const menuRes = await axiosSecure.post('/menu', menuInfo)
+            console.log('added to imgdb', mealInfo);
+            const menuRes = await axiosPublic.post('/meal', mealInfo)
 
-            // console.log(menuRes.data);
-            // if (menuRes.data.insertedId) {
-            //     reset();
-            //     Swal.fire({
-            //         position: "top-end",
-            //         icon: "success",
-            //         title: "Your work has been saved",
-            //         showConfirmButton: false,
-            //         timer: 1500
-            //     });
+            console.log(menuRes.data);
+            if (menuRes.data.insertedId) {
+                reset();
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Your work has been saved",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
 
-            // }
+            }
 
 
         }
